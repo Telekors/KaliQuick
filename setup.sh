@@ -3,7 +3,7 @@ if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit
 fi
-
+timedatectl set-timezone America/Chicago
 echo "Initial Updates"
 apt-get update
 apt-get upgrade -y
