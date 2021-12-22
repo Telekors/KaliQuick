@@ -3,7 +3,13 @@ if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit
 fi
+
+echo "Setting timezone"
 timedatectl set-timezone America/Chicago
+
+echo "Disabling Lock Screen"
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+
 echo "Initial Updates"
 apt-get update
 apt-get upgrade -y
