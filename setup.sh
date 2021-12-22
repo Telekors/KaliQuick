@@ -9,6 +9,7 @@ timedatectl set-timezone America/Chicago
 
 echo "Disabling Lock Screen"
 gsettings set org.gnome.desktop.screensaver lock-enabled false
+cp xfce4-power-manager.xml /home/kali/.config/xfce4/xfconf/xfce-perchannel-xml/
 
 echo "Initial Updates"
 apt-get update
