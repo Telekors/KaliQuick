@@ -6,8 +6,8 @@ fi
 
 echo "Initial Updates"
 apt-get update
-apt-get upgrade
-apt-get dist-upgrade
+apt-get upgrade -y
+apt-get dist-upgrade -y
 
 vmware-hgfsclient | while read folder; do
 	echo "[i] Mounting ${folder}(/mnt/hgfs/${folder})"
@@ -23,7 +23,7 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
 apt-get install apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 apt-get update
-apt-get install sublime-text
+apt-get install sublime-text -y
 
 echo "Installing Gnmap Parser"
 #### Git Gnmap Parser
@@ -32,4 +32,4 @@ mkdir /tools
 git clone https://github.com/jasonjfrank/gnmap-parser.git /tools
 
 echo "Retrieving Burp Install Link"
-firefox https://portswigger.net/burp/releases#professional &
+runuser -u kali firefox https://portswigger.net/burp/releases#professional &
