@@ -8,6 +8,9 @@ echo "Initial Updates"
 apt-get update
 apt-get upgrade -y
 apt-get dist-upgrade -y
+apt -y autoremove
+apt -y autoclean
+updatedb
 
 vmware-hgfsclient | while read folder; do
 	echo "[i] Mounting ${folder}(/mnt/hgfs/${folder})"
