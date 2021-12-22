@@ -55,9 +55,10 @@ git clone https://github.com/leebaird/discover.git /opt/discover/
 echo "Running Discover Update"
 cd /opt/discover/config/
 ./install.sh
-runuser -u kali discover.sh
+runuser -u kali install.sh
+cp zshrc /root/
 cd /root/
-source .zshrc
+source zshrc
 update
 
 
