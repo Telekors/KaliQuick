@@ -29,7 +29,8 @@ echo "Installing Gnmap Parser"
 #### Git Gnmap Parser
 apt-get install git
 mkdir /tools
-git clone https://github.com/jasonjfrank/gnmap-parser.git /tools
+mkdir /tools/gnmap-parser
+git clone https://github.com/jasonjfrank/gnmap-parser.git /tools/gnmap-parser/
 
 echo "Retrieving Burp Install Link"
 runuser -u kali firefox https://portswigger.net/burp/releases#professional &
