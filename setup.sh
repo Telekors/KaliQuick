@@ -53,7 +53,15 @@ echo "Installing Discover"
 git clone https://github.com/leebaird/discover.git /opt/discover/
 
 echo "Running Discover Update"
-/opt/discover/update.sh
+cd /opt/discover/config/
+runuser -u kali chmod +x discover.sh
+./install.sh
+runuser -u kali discover.sh
+cd /root/
+source .zshrc
+update
+
+
 
 echo "Retrieving Burp Install Link"
 runuser -u kali firefox https://portswigger.net/burp/releases#professional &
