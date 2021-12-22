@@ -25,12 +25,25 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 apt-get update
 apt-get install sublime-text -y
 
+echo "Installing Linux Utilities"
+apt-get install tree -y
+apt-get install python3-pip -y
+apt-get install feroxbuster -y
+
+
+echo "Installing Python Utilities"
+pip3 install tldr
+
 echo "Installing Gnmap Parser"
 #### Git Gnmap Parser
 apt-get install git
-mkdir /tools
-mkdir /tools/gnmap-parser
-git clone https://github.com/jasonjfrank/gnmap-parser.git /tools/gnmap-parser/
+git clone https://github.com/jasonjfrank/gnmap-parser.git /opt/gnmap-parser/
+
+echo "Installing Discover"
+git clone https://github.com/leebaird/discover.git /opt/discover/
+
+echo "Running Discover Update"
+./opt/discover/update.sh
 
 echo "Retrieving Burp Install Link"
 runuser -u kali firefox https://portswigger.net/burp/releases#professional &
